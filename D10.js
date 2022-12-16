@@ -182,7 +182,7 @@ function rollTheDices(num) {
 console.log("----------------Esercizio 9----------------");
 
 function howManyDays(date) {
-  let timeDiff = Date.now() - Date.parse(date);
+  let timeDiff = Date.now() - Date.parse(date); // dato che entrambe le funzioni ritonano un numero di millesecondi passati dala stessa data (1 january 1970)(formato iso) posso fare la loro differenza per trovare quanti millesecondi sono passati da oggi alla data segnata
   let daysDiff = timeDiff / (1000 * 60 * 60 * 24);
   return `sono trascorsi ${daysDiff} giorni`;
 }
