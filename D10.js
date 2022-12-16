@@ -52,10 +52,26 @@ me.skills.pop();
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
+console.log("----------------Esercizio 1----------------");
+dice = () => {
+  return Math.floor(Math.random() * 6) + 1;
+};
+//console.log(dice());
 
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+
+console.log("----------------Esercizio 2----------------");
+
+whoIsBigger = (num1, num2) => {
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
+};
+//console.log(whoIsBigger(2, 3));
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
@@ -63,24 +79,74 @@ me.skills.pop();
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
 
+console.log("----------------Esercizio 3----------------");
+
+splitMe = (str) => {
+  const words = str.split(" ");
+  return words;
+};
+//console.log(splitMe("I love coding"));
+
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
 
+console.log("----------------Esercizio 4----------------");
+
+deleteOne = (str, bool) => {
+  if (bool === true) {
+    str = str.slice(1);
+    return str;
+  } else {
+    str = str.slice(0, -1);
+    return str;
+  }
+};
+//console.log(deleteOne("ciao", true));
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+console.log("----------------Esercizio 5----------------");
+
+function onlyLetters(str) {
+  return str.replace(/ [0-9]/g, "");
+}
+//console.log(onlyLetters("ciao ho 9 cavalli"));
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
+console.log("----------------Esercizio 6----------------");
+
+function isThisAnEmail(str) {
+  const emailRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  return emailRegex.test(str);
+}
+//console.log(isThisAnEmail("ciao@gmail.com"));
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+console.log("----------------Esercizio 7----------------");
+function whatDayIsIt() {
+  const date = new Date();
+  const dayNumber = date.getDay();
+  const dayNames = [
+    "Domenica",
+    "Lunedì",
+    "Martedì",
+    "Mercoledì",
+    "Giovedì",
+    "Venerdì",
+    "Sabato",
+  ];
+  return dayNames[dayNumber];
+}
+//console.log(whatDayIsIt());
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -94,6 +160,22 @@ me.skills.pop();
       values: [3, 3, 4]
   }
 */
+console.log("----------------Esercizio 8----------------");
+function rollTheDices(num) {
+  let sum = 0;
+  let values = [];
+
+  for (let i = 0; i < num; i++) {
+    const value = dice();
+    sum += value;
+    values.push(value);
+  }
+  return {
+    sum: sum,
+    values: values,
+  };
+}
+console.log(rollTheDices(10));
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
