@@ -112,9 +112,9 @@ deleteOne = (str, bool) => {
 console.log("----------------Esercizio 5----------------");
 
 function onlyLetters(str) {
-  return str.replace(/ [0-9]/g, "");
+  return str.replace(/ \d+/g, ""); // con d prendo i numeri e d+ i numeri adiacenti in questo modo mettendo lo spazio prima di \d+ riesco a eliminare gli spazi in più che si creano cancellando i numeri
 }
-//console.log(onlyLetters("ciao ho 9 cavalli"));
+//console.log(onlyLetters("ciao ho 91 cavalli"));
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
