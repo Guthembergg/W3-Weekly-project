@@ -598,6 +598,7 @@ function isItPrime(num) {
 
   return true;
 }
+
 // !! l'ho fatto in questo modo perchè piu semplice ma in realtà:
 // !! può essere reso più efficente prendendo un i<= della radice di num dato che non può essere divisibile per più di sqrt di se stesso senza essere divisibile per numeri precedenti alla radice dato che matematicamente uno dei fattori del divisore deve essere minore della radice !!
 
